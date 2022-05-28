@@ -96,6 +96,7 @@ class Ui_OutputDialog(QDialog):
                                 self.StatusLabel.setText('Present in class')
                                 self.HoursLabel.setText('Ongoing Class')
                                 self.MinLabel.setText('')
+                                self.SecLabel.setText('')
 
                                 #self.CalculateElapse(name)
                                 #print('Yes clicked and detected')
