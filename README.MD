@@ -116,19 +116,19 @@ Install and freeze Requirements
 
 ### StartUp screen
 
-<img src="Face Recognition-Attendance system(PtQt5)-Devshree Singh/preview/start.png" alt="start" width="700"/>
+<img src="preview/start.png" alt="start" width="700"/>
 
 ### Attendance System Screen-Face recognition result
 
-<img src="Face Recognition-Attendance system(PtQt5)-Devshree Singh/preview/s1.png" alt="attendance system" width="700"/>
+<img src="preview/s1.png" alt="attendance system" width="700"/>
 
 ### After being recognized
 
-<img src="Face Recognition-Attendance system(PtQt5)-Devshree Singh/preview/s2.png" alt="After being recognized" width="700"/>
+<img src="preview/s2.png" alt="After being recognized" width="700"/>
 
 ### Attendance sheet preview
 
-<img src="Face Recognition-Attendance system(PtQt5)-Devshree Singh/preview/csv file.png" alt="Attendance sheet preview" width="700"/>
+<img src="preview/csv file.png" alt="Attendance sheet preview" width="700"/>
 
 
 ## Shortcomings and Future Aspects
