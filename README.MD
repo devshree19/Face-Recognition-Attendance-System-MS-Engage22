@@ -21,7 +21,7 @@
         <!-- <li><a href="#prerequisites">Prerequisites</a></li> -->
         <!-- <li><a href="#installation">Installation</a></li> -->
       <!-- </ul> --> 
-    <!-- </li> --> -->
+    <!-- </li> --> 
     <li><a href="#preview-of-the-web-application">Preview of the Web Application</a></li><ul>
         <li><a href="#register">Startup Screen</a></li>
         <li><a href="#login">Main Screen</a></li>
