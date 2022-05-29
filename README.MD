@@ -71,7 +71,7 @@ Laptops and Tablets
       Database, Code Maintainance and Backend
       <ul>
         <li>Excel(csv)</li>
-        <li>Git,GitHub and GitHub Desktop </li>
+        <li>Git,GitHub </li>
       </ul>
     </li>
    
@@ -94,20 +94,12 @@ Install CMake first to install Dlib on windows
 
 * Web Application
 To run the web application on your local host, perform the following steps:
+
 Clone the GitHub Repo
-Create Virtual environment
-```sh
-  python -m venv name_of_virtual_environment 
-```
-```sh
-  .\name_of_virtual_environment\Scripts\activate 
-```
-Install and freeze Requirements
+Open the directory in command prompt where repo is cloned.
+Install Required libraries in PyCharm
 ```sh
   pip install -r requirements.txt 
-```
-```sh
-  pip freeze > requirements.txt 
 ```
 
 ## How face recognition works?
