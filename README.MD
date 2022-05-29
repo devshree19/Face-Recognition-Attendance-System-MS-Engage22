@@ -15,19 +15,19 @@
         <li><a href="#built-with">Built With</a></li>
       </ul>
     </li>
-    <!-- <li>
+   <li>
       <a href="#getting-started">Getting Started</a>
-      <!-- <ul>
-        <!-- <li><a href="#prerequisites">Prerequisites</a></li> -->
-        <!-- <li><a href="#installation">Installation</a></li> -->
-      <!-- </ul> --> 
-    <!-- </li> --> 
-    <li><a href="#preview-of-the-web-application">Preview of the Web Application</a></li><ul>
-        <li><a href="#register">Startup Screen</a></li>
-        <li><a href="#login">Main Screen</a></li>
-        <!-- <li><a href="#ui-before-uploading-the-image">UI before Uploading the image</a></li> -->
-        <!-- <li><a href="#face-detection-results">Face Detection Results</a></li> -->
-        <!-- <li><a href="#django-admin-user-and-web-app-data">Django Admin User and Web App Data</a></li> -->
+       <ul>
+         <li><a href="#prerequisites">Prerequisites</a></li> 
+         <li><a href="#installation">Installation</a></li> 
+       </ul>  
+     </li> 
+    <li><a href="#how-face-recognition-works?">How face recognition works?</a></li>
+    <li><a href="#preview-of-the-web-application">Preview of the Web Application</a></li>       <ul>
+        <li><a href="#startup-screen">Startup Screen</a></li>
+        <li><a href="#attendance-system-screen-face-recognition-result">Attendance System Screen-Face recognition result</a></li>
+    <li><a href="#face-recognized">Face Recognized</a></li>
+    <li><a href="#attendance-sheet-preview">Attendance sheet preview</a></li>
       </ul>
     <li><a href="#shortcomings-and-future-aspects">Shortcomings and Future Aspects</a></li>
   </ol>
@@ -110,11 +110,40 @@ Install and freeze Requirements
   pip freeze > requirements.txt 
 ```
 
+## How face recognition works?
+#### Face Detection: 
+dlib’s HOG(histogram of oriented gradient) detector is used for this.
 
+Hog detector checks for each pixel in the image the surrounding pixels to the current pixel. It then draws arrows in the direction in which the image is getting darker. In the end, the entire image is filled with arrows. These arrows are called gradients and they show the flow from light to dark across the image. We check this pattern to the earlier known face pattern of gradients and extract only the face part.
+
+The original image is turned into a HOG representation that captures the major features of the image regardless of image brightness.
+To find faces in this HOG image, all we have to do is find the part of our image that looks the most similar to a known HOG pattern that was extracted from a bunch of other training faces.
+
+I have used the HOG face detection module, which is the default for face-recognition library’s get face location function.
+
+#### Face Encoding: 
+convert that face image into numerical feature points that describe the face in the best possible way.
+Now instead of comparing the entire face to al the faces in the database, we only compare some extracted features from the unknown face to all the known faces. For example, we might measure the size of each ear, the spacing between the eyes, the length of the nose, etc.
+The training process works by looking at 3 face images at a time:
+
+1.Load a training face image of a known person
+2.Load another picture of the same known person
+3.Load a picture of a totally different person
+Then the algorithm looks at the measurements it is currently generating for each of those three images. It then tweaks the neural network slightly so that it makes sure the measurements it generates for #1 and #2 are slightly closer while making sure the measurements for #2 and #3 are slightly further apart. After repeating this step millions of times for millions of images of thousands of different people, the neural network learns to reliably generate 128 measurements for each person. Any ten different pictures of the same person should give roughly the same measurements.
+
+#### Comparison: 
+compare this feature vector to other faces vectors stored in the database. One that is closest to the input image vector and whose distance is less than the threshold is the predicted output.
+
+I have used facial recognition using one-shot learning by a deep neural network.
+
+##### What is one shot learning?
+In one shot learning, only one image per person is stored in the database, which is passed through the neural network to generate an embedding vector. This embedding vector is compared with the vector generated for the person who has to be recognized. If there exist similarities between the two vectors then the system recognizes that person, else that person is not there in the database. This can be understood by the below picture.
+
+<img src="fc.png" alt="face-recognition" width="700"/>
 <!-- APP TUTORIAL-->
 ## Preview of the Web Application
 
-### StartUp screen
+  ### StartUp screen
 
 <img src="preview/start.png" alt="start" width="700"/>
 
@@ -122,7 +151,7 @@ Install and freeze Requirements
 
 <img src="preview/s1.png" alt="attendance system" width="700"/>
 
-### After being recognized
+### Face Recognized
 
 <img src="preview/s2.png" alt="After being recognized" width="700"/>
 
@@ -137,11 +166,11 @@ Install and freeze Requirements
 * It does mark the attendance from showing images to the webcam.
 
 ### Improvements
-* More Relaibility
+* More Reliability
 * Scalability
 
 ### Future Aspects
-By improving the project on relaibility part and overall aspects,it can be used on a large scale.
+By improving the project on reliability part and overall aspects,it can be used on a large scale.
 
 
 
