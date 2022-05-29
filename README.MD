@@ -22,14 +22,14 @@
          <li><a href="#installation">Installation</a></li> 
        </ul>  
      </li> 
-    <li><a href="#how-face-recognition-works?">How face recognition works?</a></li>
+    <li><a href="#how-face-recognition-works">How face recognition works?</a></li>
     <li><a href="#preview-of-the-web-application">Preview of the Web Application</a></li>       <ul>
         <li><a href="#startup-screen">Startup Screen</a></li>
         <li><a href="#attendance-system-screen-face-recognition-result">Attendance System Screen-Face recognition result</a></li>
     <li><a href="#face-recognized">Face Recognized</a></li>
     <li><a href="#attendance-sheet-preview">Attendance sheet preview</a></li>
       </ul>
-    <li><a href="#shortcomings-and-future-aspects">Shortcomings and Future Aspects</a></li>
+    <li><a href="#future-aspects">Future Aspects</a></li>
   </ol>
 </details>
 
@@ -127,8 +127,11 @@ Now instead of comparing the entire face to al the faces in the database, we onl
 The training process works by looking at 3 face images at a time:
 
 1.Load a training face image of a known person
+
 2.Load another picture of the same known person
+
 3.Load a picture of a totally different person
+
 Then the algorithm looks at the measurements it is currently generating for each of those three images. It then tweaks the neural network slightly so that it makes sure the measurements it generates for #1 and #2 are slightly closer while making sure the measurements for #2 and #3 are slightly further apart. After repeating this step millions of times for millions of images of thousands of different people, the neural network learns to reliably generate 128 measurements for each person. Any ten different pictures of the same person should give roughly the same measurements.
 
 #### Comparison: 
@@ -140,7 +143,10 @@ I have used facial recognition using one-shot learning by a deep neural network.
 In one shot learning, only one image per person is stored in the database, which is passed through the neural network to generate an embedding vector. This embedding vector is compared with the vector generated for the person who has to be recognized. If there exist similarities between the two vectors then the system recognizes that person, else that person is not there in the database. This can be understood by the below picture.
 
 <img src="fc.png" alt="face-recognition" width="700"/>
+
+
 <!-- APP TUTORIAL-->
+
 ## Preview of the Web Application
 
   ### StartUp screen
@@ -160,10 +166,7 @@ In one shot learning, only one image per person is stored in the database, which
 <img src="preview/csv file.png" alt="Attendance sheet preview" width="700"/>
 
 
-## Shortcomings and Future Aspects
-
-### Shortcomings 
-* It does mark the attendance from showing images to the webcam.
+## Future Aspects
 
 ### Improvements
 * More Reliability
