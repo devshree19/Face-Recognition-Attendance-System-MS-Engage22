@@ -1,6 +1,6 @@
 <h1 align="center">Face Recognition Attendance System
   <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Microsoft_logo.svg/480px-Microsoft_logo.svg.png" alt="Logo" width="25" height="25">
-  <img src="https://media.istockphoto.com/vectors/human-face-recognition-scanning-system-vector-illustration-vector-id1170702687?k=20&m=1170702687&s=612x612&w=0&h=9uLP7HloaQqmeI-S3R_SBB9kDgnq7oGWJlBsfPQlISc=" alt="Logo" width="25" height="25">
+  <img src="https://media.istockphoto.com/vectors/human-face-recognition-scanning-system-vector-illustration-vector-id1170702687?k=20&m=1170702687&s=612x612&w=0&h=9uLP7HloaQqmeI-S3R_SBB9kDgnq7oGWJlBsfPQlISc=" aligh="left" alt="Logo" width="25" height="25">
 </h1>
 <p align="center">
 
@@ -134,7 +134,7 @@ I have used facial recognition using one-shot learning by a deep neural network.
 ##### What is one shot learning?
 In one shot learning, only one image per person is stored in the database, which is passed through the neural network to generate an embedding vector. This embedding vector is compared with the vector generated for the person who has to be recognized. If there exist similarities between the two vectors then the system recognizes that person, else that person is not there in the database. This can be understood by the below picture.
 
-<img src="fc.png" alt="face-recognition" width="700"/>
+<img src="fc.png" alt="face-recognition" width="1000"/>
 
 
 <!-- APP TUTORIAL-->
@@ -143,19 +143,19 @@ In one shot learning, only one image per person is stored in the database, which
 
   ### StartUp screen
 
-<img src="preview/start.png" alt="start" width="700"/>
+<img src="preview/start.png" alt="start" width="500"/>
 
 ### Attendance System Screen-Face recognition result
 
-<img src="preview/s1.png" alt="attendance system" width="700"/>
+<img src="preview/s1.png" alt="attendance system" width="600"/>
 
 ### Face Recognized
 
-<img src="preview/s2.png" alt="After being recognized" width="700"/>
+<img src="preview/s2.png" alt="After being recognized" width="600"/>
 
 ### Attendance sheet preview
 
-<img src="preview/csv file.png" alt="Attendance sheet preview" width="700"/>
+<img src="preview/csv file.png" alt="Attendance sheet preview" width="600"/>
 
 
 ## Future Aspects
